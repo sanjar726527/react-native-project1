@@ -9,6 +9,7 @@ import {
   FlatList,
   Pressable,
 } from "react-native";
+import { ApiCall } from "./components/api";
 
 const data = [
   "List1",
@@ -56,7 +57,7 @@ export default function App() {
       <View
         style={{
           paddingTop: 30,
-          flex: 3,
+          flex: 1,
         }}
       >
         <FlatList
@@ -67,6 +68,9 @@ export default function App() {
             </Pressable>
           )}
         />
+      </View>
+      <View style={styles.apiContainer}>
+        <ApiCall />
       </View>
     </View>
   );
@@ -101,5 +105,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     borderColor: "#3e3e",
     backgroundColor: "#4e88f3",
+  },
+  apiContainer: {
+    marginTop: 20,
+    flex: 2,
   },
 });
